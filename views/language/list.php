@@ -20,7 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <h1>
     <?= $this->title ?>
     <div class="pull-right">
-    <?= Html::a(Yii::t('language', 'Create new'), ['language/create'], 'class' => 'btn btn-primary') ?>
+    <?= Html::a(Yii::t('language', 'Create new'), ['language/create'], ['class' => 'btn btn-primary']) ?>
 </div>
 </h1>
 
