@@ -21,6 +21,9 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= $this->title ?>
     <div class="pull-right">
         <?= Html::a(Yii::t('language', 'Scan app strings'), ['language/scan'], ['class' => 'btn btn-default']) ?>
+        <?= Html::a(Yii::t('language', 'Optimize'), ['language/optimizer'], ['class' => 'btn btn-default']) ?>
+        <?= Html::a(Yii::t('language', 'Import'), ['language/import'], ['class' => 'btn btn-default']) ?>
+        <?= Html::a(Yii::t('language', 'Export'), ['language/export'], ['class' => 'btn btn-default']) ?>
         <?= Html::a(Yii::t('language', 'Create new'), ['language/create'], ['class' => 'btn btn-primary']) ?>
     </div>
 </h1>
