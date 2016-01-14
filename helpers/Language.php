@@ -231,7 +231,8 @@ class Language
      */
     public static function getCategories()
     {
-        $languageSources = \lajax\translatemanager\models\LanguageSource::find()->select('category')->distinct()->all();
+        $languageSources = \lajax\translatemanager\models\LanguageSource::find()->select('category')
+            ->distinct()->orderBy(['category'=>SORT_ASC])->all();
 
         $categories = [];
         foreach ($languageSources as $languageSource) {
