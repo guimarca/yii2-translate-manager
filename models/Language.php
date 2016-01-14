@@ -124,7 +124,7 @@ class Language extends \yii\db\ActiveRecord {
      * @return string
      */
     public function getStatusName() {
-        return Yii::t('array', self::$_CONDITIONS[$this->status]);
+        return Yii::t('app', self::$_CONDITIONS[$this->status]);
     }
 
     /**
