@@ -103,6 +103,22 @@ class Language extends \yii\db\ActiveRecord {
 
         return $languageNames;
     }
+    
+    /**
+     * Returns the list of languages stored in the database in an array. Format: 'en' => 'en-UK
+     * @param boolean $active True/False according to the status of the language.
+     * @return array
+     * @deprecated since version 1.5.2
+     */
+    public static function getShortLanguageNames($active = false) {
+        $languageNames = [];
+        foreach (self::getLanguages($active, true) as $language) {
+            if (!isset($languageNames[$language['country']]))
+                $languageNames[$language['language']] = $language['language_id'];
+        }
+
+        return $languageNames;
+    }
 
     /**
      * Returns language objects.
