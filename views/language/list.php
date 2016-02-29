@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'rowOptions' => function ($model, $index, $widget, $grid){
           return [
-              'style'=>($model->status == 0 ? 'color:gray' : '');
+              'style'=>($model->status == 0 ? 'color:gray' : '')
               ];
         },
         'columns' => [
