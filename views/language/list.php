@@ -15,19 +15,8 @@ use yii\widgets\Pjax;
 
 $this->title = Yii::t('language', 'List of languages');
 $this->params['breadcrumbs'][] = $this->title;
-
+ 
 ?>
-<h1>
-    <?= $this->title ?>
-    <div class="pull-right">
-        <?= Html::a(Yii::t('language', 'Scan Strings'), ['language/scan'], ['class' => 'btn btn-default']) ?>
-        <?= Html::a(Yii::t('language', 'Optimize'), ['language/optimizer'], ['class' => 'btn btn-default']) ?>
-        <?= Html::a(Yii::t('language', 'Import'), ['language/import'], ['class' => 'btn btn-default']) ?>
-        <?= Html::a(Yii::t('language', 'Export'), ['language/export'], ['class' => 'btn btn-default']) ?>
-        <?= Html::a(Yii::t('language', 'Create new'), ['language/create'], ['class' => 'btn btn-primary']) ?>
-    </div>
-</h1>
-
 <div id="languages">
 
     <?php
@@ -37,6 +26,11 @@ $this->params['breadcrumbs'][] = $this->title;
     echo GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+        'rowOptions' => function ($model, $index, $widget, $grid){
+          return [
+              'style'=>($model->status == 0 ? 'color:gray' : '');
+              ];
+        },
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
             'language_id',
